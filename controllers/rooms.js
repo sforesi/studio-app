@@ -61,4 +61,5 @@ export {
   newRoom as new, 
   create,
   index,
+  show,
 }

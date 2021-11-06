@@ -2,7 +2,7 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "foe" %></h1>
+  <h1>Welcome to the Studio <%= user ? user.profile.name : "guest" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
@@ -10,6 +10,7 @@
         alt="<%= user.profile.name %> avatar"
       >
     </div>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, pariatur sit? Debitis incidunt, dolorem exercitationem suscipit autem voluptas. Voluptatem ex veritatis iste voluptates excepturi ullam maxime amet corrupti, impedit iure.</h2>
   <% } %>
 </main>
 

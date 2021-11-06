@@ -6,16 +6,12 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Reserved</th>
-        <th>Smoking</th>
       </tr>
     </thead>
     <tbody>
       <% rooms.forEach(r => { %>
         <tr>
           <td><%= r.name %></td>
-          <td><%= r.reserved %></td>
-          <td><%= r.smoking %></td>
           <td>
             <a href="/rooms/<%= r._id %> ">Details</a>
           </td>

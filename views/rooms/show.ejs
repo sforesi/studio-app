@@ -3,20 +3,22 @@
 
 <main>
   <h1>ROOM DETAILS</h1>
-  <form action="/rooms" method="POST">
-  <label>ROOM NAME:
-    <input type="text" name="name">
-  </label><br>
-  <label >
-    RESERVED?:
-    <input type="checkbox" name="reserved">
-  </label><br>
-  <label >
-    SMOKING?:
-    <input type="checkbox" name="smoking">
-  </label><br>
-  </form>
-
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Reserved</th>
+        <th>Smoking</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= room.name %></td>
+          <td><%= room.reserved %></td>
+          <td><%= room.smoking %></td>
+        </tr>
+      </tbody>
+    </table>
 </main>
 
 <%- include('../partials/footer') %>
