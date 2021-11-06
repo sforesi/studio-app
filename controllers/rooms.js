@@ -5,9 +5,15 @@ function newRoom (req, res) {
   res.render("rooms/new", {
     title: "Add Room",
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/rooms")
+  })
 }
 
 function create(req, res) {
+  req.body.reserved = !!req.body.reserved
+  req.body.smoking = !!req.body.smoking
   Room.create(req.body)
   .then(room => {
     res.redirect("/rooms")
@@ -25,15 +31,19 @@ function index(req, res) {
   .then(rooms => {
     // Do something with the rooms
     res.render("rooms/index", {
-      title: "ROOMS",
+      title: "rooms",
       rooms,
     })
   })
+  // Catch errors if there are any 
+
   .catch(err => {
     console.log(err)
     res.redirect("/rooms")
   })
 }
+
+
 export {
   newRoom as new, 
   create,

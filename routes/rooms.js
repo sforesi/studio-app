@@ -5,10 +5,11 @@ const router = Router()
 
 // localhost:3000/rooms/new - GET
 router.get("/new", roomsCtrl.new)
+
+router.get("/", roomsCtrl.index)
 // localhost:3000/rooms
 router.post("/", roomsCtrl.create)
 
-router.get("/", roomsCtrl.index)
 
 export {
   router
