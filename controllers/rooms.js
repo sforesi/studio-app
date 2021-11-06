@@ -43,6 +43,19 @@ function index(req, res) {
   })
 }
 
+function show (req, res) {
+  Room.findById(req.params.id)
+  .then(room => {
+    res.render("rooms/show", {
+      room,
+      title: "details"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/rooms")
+  })
+}
 
 export {
   newRoom as new, 

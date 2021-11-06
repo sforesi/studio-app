@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>ROOM DETAILS</h1>
+  <form action="/rooms" method="POST">
+  <label>ROOM NAME:
+    <input type="text" name="name">
+  </label><br>
+  <label >
+    RESERVED?:
+    <input type="checkbox" name="reserved">
+  </label><br>
+  <label >
+    SMOKING?:
+    <input type="checkbox" name="smoking">
+  </label><br>
+  </form>
+
+</main>
+
+<%- include('../partials/footer') %>
