@@ -17,18 +17,18 @@ function index(req, res) {
   })
 }
 
-// function create(req, res) {
-//   req.body.owner = req.user.profile._id
-//   req.body.tasty = !!req.body.tasty
-//   Instrument.create(req.body)
-//   .then(instrument => {
-//     res.redirect("/instruments")
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/instruments")
-//   })
-// }
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  req.body.tasty = !!req.body.tasty
+  Instrument.create(req.body)
+  .then(instrument => {
+    res.redirect("/instruments")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
 
 // function show(req, res) {
 //   Instrument.findById(req.params.id)
@@ -117,7 +117,7 @@ function index(req, res) {
 
 export {
   index,
-  // create,
+  create,
   // show,
   // switchReserved,
   // edit,

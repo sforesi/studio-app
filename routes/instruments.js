@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import * as instrumentsCtrl from "../controllers/instruments.js"
-// import { isLoggedIn } from '../middleware/middleware.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
@@ -14,7 +14,7 @@ router.get("/new", instrumentsCtrl.index)
 // router.get("/:id/edit", instrumentsCtrl.edit)
 
 // localhost:3000/instruments - POST
-// router.post("/", isLoggedIn, instrumentsCtrl.create)
+router.post("/", isLoggedIn, instrumentsCtrl.create)
 
 // localhost:3000/instrument/:id/switch-reserved - PATCH
 // router.patch("/:id/switch-reserved", isLoggedIn, instrumentsCtrl.switchReserved)
