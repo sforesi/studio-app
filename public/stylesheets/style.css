@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: slategray;
+  background-color: #8d5a97;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -26,7 +26,7 @@ body {
 }
 
 nav {
-  background-color: white;
+  background-color: #907f9f;
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
@@ -68,7 +68,7 @@ section {
 }
 
 a {
-  color: #00B7FF;
+  color: #a4a5ae;
 }
 
 nav > a {

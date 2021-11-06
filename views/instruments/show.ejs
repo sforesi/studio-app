@@ -1,0 +1,28 @@
+<%- include("../partials/html-head") %>
+<%- include("../partials/nav") %>
+
+<section>
+  <p>Staff member: <%= instrument.owner.name %></p>
+  <h1><%= instrument.name %> </h1>
+  <h2>This instrument is <%= instrument.reserved ? "reserved" : "not reserved" %> </h2>
+  <% if (user) {%>
+    <form 
+      action="/instruments/<%= instrument._id %>/switch-reserved?_method=PATCH"
+      method="POST"  
+    >
+      <button class="btn" type="submit">
+        Make instrument <%= instrument.reserved ? "not reserved" : "reserved" %> 
+      </button>
+    </form>
+  <% } %>
+  <% if (instrument.owner.equals(user?.profile._id)) { %>
+    <form action="/instruments/<%= instrument._id %>/edit" method="GET">
+      <button class="btn" type="submit">Edit this instrument</button>
+    </form>
+    <form action="/instruments/<%= instrument._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete this instrument</button>
+    </form>
+  <% } %>
+</section>
+
+<%- include("../partials/footer") %> 

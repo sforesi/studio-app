@@ -1,0 +1,28 @@
+<%- include("../partials/html-head") %>
+<%- include("../partials/nav") %>
+
+<section>
+  <h1>Edit the Instrument</h1>
+  <form action="/instruments/<%= instrument._id %>?_method=PUT" method="POST">
+    <label>
+      Name:
+      <input 
+        type="text" 
+        name="name" 
+        value="<%= instrument.name %>"
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Reserved?
+      <input 
+        type="checkbox" 
+        name="reserved"
+        <%= instrument.reserved ? "checked" : "" %> 
+      >
+    </label>
+    <button type="submit">Edit the Instrument</button>
+  </form>
+</section>
+
+<%- include("../partials/footer") %> 
