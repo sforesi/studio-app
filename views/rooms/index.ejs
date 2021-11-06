@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Reserved</th>
+        <th>Smoking</th>
+      </tr>
+    </thead>
+  </table>
+  <tbody>
+    <% rooms.forEach(r => { %>
+      <tr>
+        <td><%= r.name %></td>
+        <td><%= r.reserved %></td>
+        <td><%= r.smoking %></td>
+        <td>
+        <a href="/rooms/<%= r._id %> ">DETAILS</a>
+        </td>
+      </tr>
+      <% }) %>  
+  </tbody>
+</main>
+
+<%- include('../partials/footer') %>
