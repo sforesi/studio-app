@@ -30,20 +30,20 @@ function create(req, res) {
   })
 }
 
-// function show(req, res) {
-//   Instrument.findById(req.params.id)
-//   .populate("owner")
-//   .then(instrument => {
-//     res.render("instruments/show", {
-//       instrument,
-//       title: "show"
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/instruments")
-//   })
-// }
+function show(req, res) {
+  Instrument.findById(req.params.id)
+  .populate("owner")
+  .then(instrument => {
+    res.render("instruments/show", {
+      instrument,
+      title: "show"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
 
 // function switchReserved (req, res) {
 //   Instrument.findById(req.params.id)
@@ -118,7 +118,7 @@ function create(req, res) {
 export {
   index,
   create,
-  // show,
+  show,
   // switchReserved,
   // edit,
   // update,

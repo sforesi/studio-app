@@ -8,7 +8,7 @@ const router = Router()
 router.get("/new", instrumentsCtrl.index)
 
 // localhost:3000/instruments/:id - GET
-// router.get("/:id", instrumentsCtrl.show)
+router.get("/:id", instrumentsCtrl.show)
 
 // localhost:3000/instruments/:id/edit
 // router.get("/:id/edit", instrumentsCtrl.edit)
