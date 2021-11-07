@@ -1,5 +1,6 @@
 import { Instrument } from "../models/instrument.js"
 
+
 function index(req, res) {
   // Find all instruments
   Instrument.find({})
@@ -19,7 +20,7 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
-  req.body.tasty = !!req.body.tasty
+  req.body.reserved = !!req.body.reserved
   Instrument.create(req.body)
   .then(instrument => {
     res.redirect("/instruments")
@@ -27,6 +28,17 @@ function create(req, res) {
   .catch(err => {
     console.log(err)
     res.redirect("/instruments")
+  })
+}
+
+
+function newInstrument (req, res) {
+  res.render("instrument/new", {
+    title: "Add Instrument",
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/rooms")
   })
 }
 
@@ -116,9 +128,11 @@ function show(req, res) {
 // }
 
 export {
+
   index,
   create,
   show,
+  newInstrument as new,
   // switchReserved,
   // edit,
   // update,

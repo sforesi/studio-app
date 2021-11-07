@@ -5,7 +5,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 // localhost:3000/instrument - GET
-router.get("/new", instrumentsCtrl.index)
+router.get("/", instrumentsCtrl.index)
 
 // localhost:3000/instruments/:id - GET
 router.get("/:id", instrumentsCtrl.show)
