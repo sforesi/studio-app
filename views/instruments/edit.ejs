@@ -2,7 +2,7 @@
 <%- include("../partials/nav") %>
 
 <section>
-  <h1>Edit the Instrument</h1>
+  <h1>Edit Instrument</h1>
   <form action="/instruments/<%= instrument._id %>?_method=PUT" method="POST">
     <label>
       Name:
@@ -14,14 +14,23 @@
       >
     </label>
     <label>
-      Reserved?
+      Price:
+      <input 
+        type="text" 
+        price="price" 
+        value="<%= instrument.price %>"
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Reserved
       <input 
         type="checkbox" 
         name="reserved"
         <%= instrument.reserved ? "checked" : "" %> 
       >
     </label>
-    <button type="submit">Edit the Instrument</button>
+    <button type="submit">Update Instrument</button>
   </form>
 </section>
 
