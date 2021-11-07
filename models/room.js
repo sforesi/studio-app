@@ -6,7 +6,7 @@ const roomSchema = new Schema({
   name: String,
   reserved: Boolean,
   smoking: Boolean,
-  price: Number,
+  price: {type: Number, min: 0, max: 1000}
 })
 
 const Room = mongoose.model('Room', roomSchema)
