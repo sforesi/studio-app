@@ -86,26 +86,26 @@ function edit(req, res) {
   })
 }
 
-// function update(req, res) {
-//   Instrument.findById(req.params.id)
-//   .then(instrument => {
-//     if (instrument.owner.equals(req.user.profile._id)) {
-//       // the person that created the instrument is trying to edit the instrument
-//       req.body.reserved = !!req.body.reserved
-//       instrument.updateOne(req.body, {new: true})
-//       .then(() => {
-//         res.redirect(`/instruments/${instrument._id}`)
-//       })
-//     } else {
-//       // the person that created the instrument is NOT the person trying to edit the instrument
-//       throw new Error ("🚫 Not Authorized! 🚫")
-//     }
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/instruments")
-//   })
-// }
+function update(req, res) {
+  Instrument.findById(req.params.id)
+  .then(instrument => {
+    if (instrument.owner.equals(req.user.profile._id)) {
+      // the person that created the instrument is trying to edit the instrument
+      req.body.reserved = !!req.body.reserved
+      instrument.updateOne(req.body, {new: true})
+      .then(() => {
+        res.redirect(`/instruments/${instrument._id}`)
+      })
+    } else {
+      // the person that created the instrument is NOT the person trying to edit the instrument
+      throw new Error ("🚫 Not Authorized! 🚫")
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
 
 // function deleteInstrument(req, res) {
 //   Instrument.findById(req.params.id)
@@ -135,6 +135,6 @@ export {
   show,
   switchReserved,
   edit,
-  //   update,
+  update,
   //   deleteInstrument as delete
 }

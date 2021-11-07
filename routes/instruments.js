@@ -44,10 +44,8 @@ router.get("/:id", instrumentsCtrl.show)
 // localhost:3000/instruments/:id/edit
 router.get("/:id/edit", instrumentsCtrl.edit)
 
-
-
 // localhost:3000/instruments
-router.post("/", instrumentsCtrl.create)
+router.post("/", isLoggedIn, instrumentsCtrl.create)
 
 // localhost:3000/instrument/:id/switch-reserved - PATCH
 router.patch("/:id/switch-reserved", isLoggedIn, instrumentsCtrl.switchReserved)

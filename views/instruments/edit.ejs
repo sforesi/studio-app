@@ -2,7 +2,7 @@
 <%- include("../partials/nav") %>
 
 <section>
-  <h1>Edit the Instrument</h1>
+  <h1>Edit Instrument</h1>
   <form action="/instruments/<%= instrument._id %>?_method=PUT" method="POST">
     <label>
       Name:
@@ -30,7 +30,7 @@
         <%= instrument.reserved ? "checked" : "" %> 
       >
     </label>
-    <button type="submit">Edit Instrument</button>
+    <button type="submit">Update Instrument</button>
   </form>
 </section>
 
