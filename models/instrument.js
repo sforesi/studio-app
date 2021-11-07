@@ -14,3 +14,4 @@ const Instrument = mongoose.model('Instrument', instrumentSchema)
 export {
   Instrument,
 }
+

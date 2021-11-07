@@ -3,7 +3,7 @@ import { Room } from "../models/room.js"
 
 function newRoom (req, res) {
   res.render("rooms/new", {
-    title: "Add Room",
+    title: "ADD ROOM",
   })
   .catch(err => {
     console.log(err)
@@ -31,7 +31,7 @@ function index(req, res) {
   .then(rooms => {
     // Do something with the rooms
     res.render("rooms/index", {
-      title: "rooms",
+      title: "ROOMS",
       rooms,
     })
   })
@@ -48,7 +48,7 @@ function show (req, res) {
   .then(room => {
     res.render("rooms/show", {
       room,
-      title: "details"
+      title: "ROOM DETAILS"
     })
   })
   .catch(err => {

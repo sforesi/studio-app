@@ -8,7 +8,7 @@ function index(req, res) {
   .then(instruments => {
     // Do something with the instruments
     res.render("instruments/index", {
-      title: "instruments",
+      title: "INSTRUMENTS",
       instruments,
     })
   })
@@ -20,7 +20,7 @@ function index(req, res) {
 }
 function newInstrument (req, res) {
   res.render("instruments/new", {
-    title: "Add Instrument",
+    title: "ADD INSTRUMENT",
   })
   .catch(err => {
     console.log(err)
@@ -44,10 +44,11 @@ function create(req, res) {
 
 function show (req, res) {
   Instrument.findById(req.params.id)
+  .populate("owner")
   .then(instrument => {
     res.render("instruments/show", {
       instrument,
-      title: "details"
+      title: "INSTRUMENT DETAILS"
     })
   })
   .catch(err => {
@@ -76,7 +77,7 @@ function edit(req, res) {
   Instrument.findById(req.params.id)
   .then(instrument => {
     res.render("instruments/edit", {
-      title: "Edit Instrument",
+      title: "EDIT INSTRUMENT",
       instrument,
     })
   })

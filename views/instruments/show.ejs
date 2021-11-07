@@ -2,8 +2,8 @@
 <%- include("../partials/nav") %>
 
 <section>
-  <p>Staff member: <%= instrument.owner.name %></p>
-  <h1><%= instrument.name %> </h1>
+  <p>Staff member: <%#= instrument.owner.name %></p>
+  <h1><%#= instrument.name %> </h1>
   <h2>This instrument is <%= instrument.reserved ? "reserved" : "not reserved" %> </h2>
   <% if (user) {%>
     <form 
@@ -15,13 +15,13 @@
       </button>
     </form>
   <% } %>
-  <% if (instrument.owner.equals(user?.profile._id)) { %>
+  <#% if (instrument.owner.equals(user?.profile._id)) { %>
     <form action="/instruments/<%= instrument._id %>/edit" method="GET">
-      <button class="btn" type="submit">Edit this instrument</button>
+      <button class="btn" type="submit">EDIT INSTRUMENT</button>
     </form>
     <form action="/instruments/<%= instrument._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete this instrument</button>
+      <button class="btn" type="submit">DELETE INSTRUMENT</button>
     </form>
-  <% } %>
+  <#% } %>
 </section>
 <%- include("../partials/footer") %> 
