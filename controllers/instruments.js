@@ -72,19 +72,19 @@ function switchReserved (req, res) {
   })
 }
 
-// function edit(req, res) {
-//   Instrument.findById(req.params.id)
-//   .then(instrument => {
-//     res.render("instruments/edit", {
-//       title: "Edit Instrument",
-//       instrument,
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/instruments")
-//   })
-// }
+function edit(req, res) {
+  Instrument.findById(req.params.id)
+  .then(instrument => {
+    res.render("instruments/edit", {
+      title: "Edit Instrument",
+      instrument,
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
 
 // function update(req, res) {
 //   Instrument.findById(req.params.id)
@@ -134,7 +134,7 @@ export {
   index,
   show,
   switchReserved,
-  //   edit,
+  edit,
   //   update,
   //   deleteInstrument as delete
 }

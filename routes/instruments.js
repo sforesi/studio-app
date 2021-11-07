@@ -10,8 +10,6 @@
 // // localhost:3000/instruments/:id - GET
 // router.get("/:id", instrumentsCtrl.show)
 
-// // localhost:3000/instruments/:id/edit
-// router.get("/:id/edit", instrumentsCtrl.edit)
 
 // // localhost:3000/instruments - POST
 // router.post("/", isLoggedIn, instrumentsCtrl.create)
@@ -43,6 +41,10 @@ router.get("/new", instrumentsCtrl.new)
 router.get("/", instrumentsCtrl.index)
 // localhost:3000/instruments/:id
 router.get("/:id", instrumentsCtrl.show)
+// localhost:3000/instruments/:id/edit
+router.get("/:id/edit", instrumentsCtrl.edit)
+
+
 
 // localhost:3000/instruments
 router.post("/", instrumentsCtrl.create)
