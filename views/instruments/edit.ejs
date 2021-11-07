@@ -14,14 +14,23 @@
       >
     </label>
     <label>
-      Reserved?
+      Price:
+      <input 
+        type="text" 
+        price="price" 
+        value="<%= instrument.price %>"
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Reserved
       <input 
         type="checkbox" 
         name="reserved"
         <%= instrument.reserved ? "checked" : "" %> 
       >
     </label>
-    <button type="submit">Edit the Instrument</button>
+    <button type="submit">Edit Instrument</button>
   </form>
 </section>
 
