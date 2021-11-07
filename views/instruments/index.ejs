@@ -3,20 +3,6 @@
 
 <section>
   <h1>Instruments</h1>
-  <% if (user) { %>
-    <h2>Add a instrument</h2>
-    <form action="/instruments" method="POST">
-      <label>
-        Name:
-        <input type="text" name="name" autocomplete="off">
-      </label>
-      <label>
-        reserved?
-        <input type="checkbox" name="reserved">
-      </label>
-      <button type="submit">Add Instrument</button>
-    </form>
-  <% } %>
   <h2>All the instruments</h2>
   <ul>
     <% instruments.forEach(instrument => { %>

@@ -1,76 +1,76 @@
-// import { Instrument } from "../models/instrument.js"
+// Importing the Room model
+import { Instrument } from "../models/instrument.js"
+
+function index(req, res) {
+  // Find all instruments
+  Instrument.find({})
+  // When we have the instruments
+  .then(instruments => {
+    // Do something with the instruments
+    res.render("instruments/index", {
+      title: "instruments",
+      instruments,
+    })
+  })
+  // Catch errors if there are any 
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
+function newInstrument (req, res) {
+  res.render("instruments/new", {
+    title: "Add Instrument",
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
+
+function create(req, res) {
+  req.body.reserved = !!req.body.reserved
+  req.body.smoking = !!req.body.smoking
+  Instrument.create(req.body)
+  .then(instrument => {
+    res.redirect("/instruments")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
 
 
-// function index(req, res) {
-//   // Find all instruments
-//   Instrument.find({})
-//   // When we have all the instruments
-//   .then(instruments => {
-//     // Do something with the instruments
-//     res.render("instruments/index", {
-//       title: "Instruments",
-//       instruments,
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/instruments")
-//   })
-// }
-
-// function create(req, res) {
-//   req.body.owner = req.user.profile._id
-//   req.body.reserved = !!req.body.reserved
-//   Instrument.create(req.body)
-//   .then(instrument => {
-//     res.redirect("/instruments")
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/instruments")
-//   })
-// }
+function show (req, res) {
+  Instrument.findById(req.params.id)
+  .then(instrument => {
+    res.render("instruments/show", {
+      instrument,
+      title: "details"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
 
 
-// function newInstrument (req, res) {
-//   res.render("instrument/new", {
-//     title: "Add Instrument",
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/rooms")
-//   })
-// }
-
-// function show(req, res) {
-//   Instrument.findById(req.params.id)
-//   .populate("owner")
-//   .then(instrument => {
-//     res.render("instruments/show", {
-//       instrument,
-//       title: "show"
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/instruments")
-//   })
-// }
-
-// function switchReserved (req, res) {
-//   Instrument.findById(req.params.id)
-//   .then(instrument => {
-//     instrument.reserved = !instrument.reserved
-//     instrument.save()
-//     .then(() => {
-//       res.redirect(`/instruments/${instrument._id}`)
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect("/instruments")
-//   })
-// }
+function switchReserved (req, res) {
+  Instrument.findById(req.params.id)
+  .then(instrument => {
+    instrument.reserved = !instrument.reserved
+    instrument.save()
+    .then(() => {
+      res.redirect(`/instruments/${instrument._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
 
 // function edit(req, res) {
 //   Instrument.findById(req.params.id)
@@ -127,82 +127,14 @@
 //   })
 // }
 
-// export {
-
-//   index,
-//   create,
-//   show,
-//   newInstrument as new,
-//   switchReserved,
-//   edit,
-//   update,
-//   deleteInstrument as delete
-// }
-
-
-
-// Importing the Room model
-import { Instrument } from "../models/instrument.js"
-
-function newInstrument (req, res) {
-  res.render("instruments/new", {
-    title: "Add Instrument",
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect("/instruments")
-  })
-}
-
-function create(req, res) {
-  req.body.reserved = !!req.body.reserved
-  req.body.smoking = !!req.body.smoking
-  Instrument.create(req.body)
-  .then(instrument => {
-    res.redirect("/instruments")
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect("/instruments")
-  })
-}
-
-function index(req, res) {
-  // Find all instruments
-  Instrument.find({})
-  // When we have the instruments
-  .then(instruments => {
-    // Do something with the instruments
-    res.render("instruments/index", {
-      title: "instruments",
-      instruments,
-    })
-  })
-  // Catch errors if there are any 
-
-  .catch(err => {
-    console.log(err)
-    res.redirect("/instruments")
-  })
-}
-
-function show (req, res) {
-  Instrument.findById(req.params.id)
-  .then(instrument => {
-    res.render("instruments/show", {
-      instrument,
-      title: "details"
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect("/instruments")
-  })
-}
 
 export {
   newInstrument as new, 
   create,
   index,
   show,
+  switchReserved,
+  //   edit,
+  //   update,
+  //   deleteInstrument as delete
 }

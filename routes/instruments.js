@@ -1,6 +1,6 @@
 // import { Router } from 'express'
 // import * as instrumentsCtrl from "../controllers/instruments.js"
-// import { isLoggedIn } from '../middleware/middleware.js'
+
 
 // const router = Router()
 
@@ -16,8 +16,7 @@
 // // localhost:3000/instruments - POST
 // router.post("/", isLoggedIn, instrumentsCtrl.create)
 
-// // localhost:3000/instrument/:id/switch-reserved - PATCH
-// router.patch("/:id/switch-reserved", isLoggedIn, instrumentsCtrl.switchReserved)
+
 
 // // localhost:3000/instruments/:id - PUT
 // router.put("/:id", isLoggedIn, instrumentsCtrl.update)
@@ -34,6 +33,7 @@
 
 import { Router } from 'express'
 import * as instrumentsCtrl from '../controllers/instruments.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
@@ -43,9 +43,12 @@ router.get("/new", instrumentsCtrl.new)
 router.get("/", instrumentsCtrl.index)
 // localhost:3000/instruments/:id
 router.get("/:id", instrumentsCtrl.show)
+
 // localhost:3000/instruments
 router.post("/", instrumentsCtrl.create)
 
+// localhost:3000/instrument/:id/switch-reserved - PATCH
+router.patch("/:id/switch-reserved", isLoggedIn, instrumentsCtrl.switchReserved)
 
 export {
   router
