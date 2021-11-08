@@ -20,6 +20,16 @@
           <td><%= room.smoking %></td>
         </tr>
       </tbody>
+      <% if (user) {%>
+        <form 
+          action="/rooms/<%= room._id %>/switch-reserved?_method=PATCH"
+          method="POST"  
+        >
+          <button class="btn" type="submit">
+            Make room <%= room.reserved ? "not reserved" : "reserved" %> 
+          </button>
+        </form>
+      <% } %>
     </table>
 </main>
 

@@ -1,5 +1,7 @@
 import { Router } from 'express'
 import * as roomsCtrl from '../controllers/rooms.js'
+import { isLoggedIn } from '../middleware/middleware.js'
+
 
 const router = Router()
 
@@ -12,6 +14,9 @@ router.get("/:id", roomsCtrl.show)
 // localhost:3000/rooms
 router.post("/", roomsCtrl.create)
 
+
+ // localhost:3000/room/:id/switch-reserved - PATCH
+ router.patch("/:id/switch-reserved", isLoggedIn, roomsCtrl.switchReserved)
 
 export {
   router

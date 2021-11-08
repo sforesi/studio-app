@@ -46,6 +46,7 @@ function show (req, res) {
   Instrument.findById(req.params.id)
   .populate("owner")
   .then(instrument => {
+    console.log('see me!', req.params)
     res.render("instruments/show", {
       instrument,
       title: "INSTRUMENT DETAILS"
@@ -79,6 +80,7 @@ function edit(req, res) {
     res.render("instruments/edit", {
       title: "EDIT INSTRUMENT",
       instrument,
+
     })
   })
   .catch(err => {

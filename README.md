@@ -1,4 +1,4 @@
-# Recirding Studio Application
+# Recording Studio Application
 
 
 ## **Getting Started**
@@ -14,7 +14,7 @@ This app is a choose your-own adventure that runs on Browser.
 
 
 
-### **Rules** 
+### **Functionality** 
 
 
 
