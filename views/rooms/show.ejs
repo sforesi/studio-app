@@ -29,14 +29,14 @@
             Make room <%= room.reserved ? "not reserved" : "reserved" %> 
           </button>
         </form>
+        <form action="/rooms/<%= room._id %>/edit" method="GET">
+          <button class="btn" type="submit">EDIT ROOM</button>
+        </form>
+        <form action="/rooms/<%= room._id %>?_method=DELETE" method="POST">
+          <button class="btn" type="submit">DELETE ROOM</button>
+        </form>
+      </table>
       <% } %>
-      <form action="/rooms/<%= room._id %>/edit" method="GET">
-        <button class="btn" type="submit">EDIT ROOM</button>
-      </form>
-      <form action="/rooms/<%= room._id %>?_method=DELETE" method="POST">
-        <button class="btn" type="submit">DELETE ROOM</button>
-      </form>
-    </table>
 </main>
 
 <%- include('../partials/footer') %>
