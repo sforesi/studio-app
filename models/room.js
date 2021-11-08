@@ -7,7 +7,7 @@ const roomSchema = new Schema({
   reserved: Boolean,
   smoking: Boolean,
   price: {type: Number, min: 0, max: 1000},
-  instruments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Intrument'}]
+  instruments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Instrument'}]
 })
 
 const Room = mongoose.model('Room', roomSchema)

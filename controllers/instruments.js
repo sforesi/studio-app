@@ -31,6 +31,7 @@ function newInstrument (req, res) {
 function create(req, res) {
   req.body.reserved = !!req.body.reserved
   req.body.smoking = !!req.body.smoking
+  req.body.owner = req.user.profile._id
   Instrument.create(req.body)
   .then(instrument => {
     res.redirect("/instruments")

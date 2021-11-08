@@ -1,5 +1,6 @@
 // Importing the Room model
 import { Room } from "../models/room.js"
+import { Instrument } from "../models/instrument.js"
 
 function index(req, res) {
   // Find all rooms
@@ -46,10 +47,17 @@ function create(req, res) {
 
 function show (req, res) {
   Room.findById(req.params.id)
+  .populate("instruments")
+
   .then(room => {
-    res.render("rooms/show", {
-      room,
-      title: "ROOM DETAILS"
+    Instrument.find({_id: {$nin: room.instruments}})
+    .then(unreservedInstruments => {
+      console.log('SEE ME', unreservedInstruments)
+      res.render("rooms/show", {
+        room,
+        title: "ROOM DETAILS",
+        unreservedInstruments,
+      })
     })
   })
   .catch(err => {
