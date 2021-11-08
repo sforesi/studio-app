@@ -18,8 +18,11 @@ router.get("/:id/edit", roomsCtrl.edit)
 router.post("/", roomsCtrl.create)
 
 
- // localhost:3000/room/:id/switch-reserved - PATCH
- router.patch("/:id/switch-reserved", isLoggedIn, roomsCtrl.switchReserved)
+// localhost:3000/room/:id/switch-reserved - PATCH
+router.patch("/:id/switch-reserved", isLoggedIn, roomsCtrl.switchReserved)
+
+// localhost:3000/rooms/:id - PUT
+router.put("/:id", isLoggedIn, roomsCtrl.update)
 
 export {
   router

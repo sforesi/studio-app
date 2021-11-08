@@ -88,6 +88,27 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Room.findById(req.params.id)
+  .then(room => {
+    if (room.owner.equals(req.user.profile._id)) {
+      // the person that created the room is trying to edit the room
+      req.body.reserved = !!req.body.reserved
+      room.updateOne(req.body, {new: true})
+      .then(() => {
+        res.redirect(`/rooms/${room._id}`)
+      })
+    } else {
+      // the person that created the room is NOT the person trying to edit the room
+      throw new Error ("🚫 Not Authorized! 🚫")
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/instruments")
+  })
+}
+
 export {
   newRoom as new, 
   create,
@@ -95,4 +116,6 @@ export {
   show,
   switchReserved,
   edit,
+  update,
+  
 }
