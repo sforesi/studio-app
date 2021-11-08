@@ -30,6 +30,12 @@
           </button>
         </form>
       <% } %>
+      <form action="/rooms/<%= room._id %>/edit" method="GET">
+        <button class="btn" type="submit">EDIT ROOM</button>
+      </form>
+      <form action="/rooms/<%= room._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">DELETE ROOM</button>
+      </form>
     </table>
 </main>
 
