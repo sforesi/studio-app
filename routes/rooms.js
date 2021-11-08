@@ -24,6 +24,10 @@ router.patch("/:id/switch-reserved", isLoggedIn, roomsCtrl.switchReserved)
 // localhost:3000/rooms/:id - PUT
 router.put("/:id", isLoggedIn, roomsCtrl.update)
 
+// localhost:3000/rooms/:id - DELETE
+router.delete("/:id", isLoggedIn, roomsCtrl.delete)
+
+
 export {
   router
 }

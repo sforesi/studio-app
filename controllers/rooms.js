@@ -109,6 +109,28 @@ function update(req, res) {
   })
 }
 
+function deleteRoom(req, res) {
+  Room.findById(req.params.id)
+  .then(room => {
+    if (room.owner.equals(req.user.profile._id)) {
+      // the person that created the room is trying to delete the room
+      room.delete()
+      .then(() => {
+        res.redirect("/rooms")
+      })
+    } else {
+      // the person that created the room is NOT the person trying to delete the room
+      throw new Error ("🚫 Not Authorized! 🚫")
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/rooms")
+  })
+}
+
+
+
 export {
   newRoom as new, 
   create,
@@ -117,5 +139,5 @@ export {
   switchReserved,
   edit,
   update,
-  
+  deleteRoom as delete,
 }
