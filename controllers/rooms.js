@@ -73,10 +73,26 @@ function switchReserved (req, res) {
   })
 }
 
+function edit(req, res) {
+  Room.findById(req.params.id)
+  .then(room => {
+    res.render("rooms/edit", {
+      title: "EDIT ROOM",
+      room,
+
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/rooms")
+  })
+}
+
 export {
   newRoom as new, 
   create,
   index,
   show,
   switchReserved,
+  edit,
 }

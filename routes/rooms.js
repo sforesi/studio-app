@@ -11,6 +11,9 @@ router.get("/new", roomsCtrl.new)
 router.get("/", roomsCtrl.index)
 // localhost:3000/rooms/:id
 router.get("/:id", roomsCtrl.show)
+// localhost:3000/rooms/:id/edit
+router.get("/:id/edit", roomsCtrl.edit)
+
 // localhost:3000/rooms
 router.post("/", roomsCtrl.create)
 

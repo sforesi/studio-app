@@ -1,0 +1,45 @@
+<%- include("../partials/html-head") %>
+<%- include("../partials/nav") %>
+
+<section>
+  <h1>EDIT ROOM</h1>
+  <form action="/rooms/<%= room._id %>?_method=PUT" method="POST">
+    <label>
+      Name:
+      <input 
+        type="text" 
+        name="name" 
+        value="<%= room.name %>"
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Price:
+      <input 
+        type="text" 
+        price="price" 
+        value="<%= room.price %>"
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Reserved
+      <input 
+        type="checkbox" 
+        name="reserved"
+        <%= room.reserved ? "checked" : "" %> 
+      >
+    </label>
+    <label>
+      Smoking
+      <input 
+        type="checkbox" 
+        name="smoking"
+        <%= room.smoking ? "checked" : "" %> 
+      >
+    </label>
+    <button type="submit">UPDATE ROOM</button>
+  </form>
+</section>
+
+<%- include("../partials/footer") %> 
