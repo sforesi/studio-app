@@ -57,6 +57,7 @@ function show (req, res) {
         room,
         title: "ROOM DETAILS",
         unreservedInstruments,
+
       })
     })
   })

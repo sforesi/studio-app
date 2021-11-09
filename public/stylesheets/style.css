@@ -93,3 +93,8 @@ nav > a {
 .profile-avatar {
   margin-top: 50px;
 }
+
+i {
+  font-size: 5rem;
+  color: aliceblue;
+}

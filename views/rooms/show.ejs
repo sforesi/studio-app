@@ -19,7 +19,14 @@
           <td><%= room.price %>$</td>
           <td><%= room.reserved %></td>
           <td><%= room.smoking %></td>
-          <td><%= room.instruments %> </td>
+          <td>
+              <select name="instrument">
+                <% unreservedInstruments.forEach(function   (instrument){  %>    
+                    <option value="<%=instrument.name%>"> <%=instrument.name%> 
+                    </option>  
+                <% }) %> 
+              </select>
+          </td>
         </tr>  
       </tbody>
       <% if (user) {%>
