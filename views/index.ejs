@@ -1,6 +1,7 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
+
 <main>
   <h1>Welcome to the Studio <%= user ? user.profile.name : "guest" %></h1>
   <% if (user?.profile.avatar) { %>
@@ -12,7 +13,11 @@
     </div>
     <% } %>
     <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, pariatur sit? Debitis incidunt, dolorem exercitationem suscipit autem voluptas. Voluptatem ex veritatis iste voluptates excepturi ullam maxime amet corrupti, impedit iure.</h2>
-    
+    <div id="content">
+      <input type="file" id="thefile" accept="audio/*" />
+      <canvas id="canvas"></canvas>
+      <audio id="audio" controls></audio>
+    </div>
   </main>
 
 <%- include('./partials/footer') %>
