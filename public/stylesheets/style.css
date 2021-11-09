@@ -41,10 +41,16 @@ main {
 
 h1 {
   font-size: 3.6rem;
+  font-family: forma-djr-micro, sans-serif;
+  font-style: normal;
+  font-weight: 200;
 }
 
 h2 {
   font-size: 3rem;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-style: normal;
+  font-weight: 100;
 }
 
 h3 {

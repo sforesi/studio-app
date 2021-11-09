@@ -3,7 +3,7 @@
 
 
 <main>
-  <h1>Welcome to the Studio <%= user ? user.profile.name : "guest" %></h1>
+  <h1>Welcome to the Studio @ Via Cervino 18b, <%= user ? user.profile.name : "guest" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
