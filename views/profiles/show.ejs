@@ -9,10 +9,11 @@
         src="<%= profile.avatar %>" 
         alt="<%= profile.name %> avatar"
       >
-      
+
     </div>
   <% } %>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <h2>Here are your instruments <%= isSelf ? "you" : profile.room.instruments %>!</h2>
 
 </main>
 <%- include('../partials/footer') %>
