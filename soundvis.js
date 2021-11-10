@@ -1,64 +1,31 @@
-// window.onload = function() {
-  
-//   var file = document.getElementById("thefile");
-//   var audio = document.getElementById("audio");
-  
-//   file.onchange = function() {
-//     var files = this.files;
-//     audio.src = URL.createObjectURL(files[0]);
-//     audio.load();
-//     audio.play();
-//     var context = new AudioContext();
-//     var src = context.createMediaElementSource(audio);
-//     var analyser = context.createAnalyser();
+canvas = document.getElementById("renderer");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+ctx = canvas.getContext("2d");
 
-//     var canvas = document.getElementById("canvas");
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight;
-//     var ctx = canvas.getContext("2d");
+// find the center of the window
+center_x = canvas.width / 2;
+center_y = canvas.height / 2;
+radius = 150;
 
-//     src.connect(analyser);
-//     analyser.connect(context.destination);
+//draw a circle
+ctx.beginPath();
+ctx.arc(center_x,center_y,radius,0,2*Math.PI);
+ctx.stroke();
 
-//     analyser.fftSize = 256;
+for(var i = 0; i < bars; i++){
 
-//     var bufferLength = analyser.frequencyBinCount;
-//     console.log(bufferLength);
+    //divide a circle into equal parts
+    rads = Math.PI * 2 / bars;
 
-//     var dataArray = new Uint8Array(bufferLength);
+    bar_height = 100;
+    bar_width = 2;
 
-//     var WIDTH = canvas.width;
-//     var HEIGHT = canvas.height;
+    x = center_x + Math.cos(rads * i) * (radius);
+y = center_y + Math.sin(rads * i) * (radius);
+    x_end = center_x + Math.cos(rads * i)*(radius + bar_height);
+    y_end = center_y + Math.sin(rads * i)*(radius + bar_height);
 
-//     var barWidth = (WIDTH / bufferLength) * 2.5;
-//     var barHeight;
-//     var x = 0;
-
-//     function renderFrame() {
-//       requestAnimationFrame(renderFrame);
-
-//       x = 0;
-
-//       analyser.getByteFrequencyData(dataArray);
-
-//       ctx.fillStyle = "#000";
-//       ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-//       for (var i = 0; i < bufferLength; i++) {
-//         barHeight = dataArray[i];
-        
-//         var r = barHeight + (25 * (i/bufferLength));
-//         var g = 250 * (i/bufferLength);
-//         var b = 50;
-
-//         ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-//         ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-
-//         x += barWidth + 1;
-//       }
-//     }
-
-//     audio.play();
-//     renderFrame();
-//   };
-// };
+    //draw a bar
+    drawBar(x, y, x_end, y_end, bar_width);
+}

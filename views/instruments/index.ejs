@@ -1,19 +1,20 @@
 <%- include("../partials/html-head") %>
 <%- include("../partials/nav") %>
-
-<section>
-  <h2>INSTRUMENT & EQUIPMENT LIST</h2>
-  <ul>
-    <% instruments.forEach(instrument => { %>
-      <li>
-        <a href="/instruments/<%= instrument._id %>"><%= instrument.name %></a>
-        is <%= instrument.reserved ? "reserved" : "not reserved" %>
-      </li>
-    <% }) %> 
-  </ul>
-</section>
-<section>
-  <a href="/instruments/new"><i class="fas fa-drum"></i> ADD INSTRUMENT </a>
-</section>
+<main>
+  <section>
+    <h2>INSTRUMENT & EQUIPMENT LIST</h2>
+    <ul>
+      <% instruments.forEach(instrument => { %>
+        <li>
+          <a href="/instruments/<%= instrument._id %>"><%= instrument.name %></a>
+          is <%= instrument.reserved ? "reserved" : "not reserved" %>
+        </li>
+      <% }) %> 
+    </ul>
+  </section>
+  <section>
+    <a href="/instruments/new"><i class="fas fa-drum"></i> ADD INSTRUMENT </a>
+  </section>
+</main>
 
 <%- include("../partials/footer") %> 
