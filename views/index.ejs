@@ -3,8 +3,7 @@
 
 
 <main>
-  <h1>Welcome to the Studio @ Via Cervino, <%= user ? user.profile.name : "guest" %></h1>
-  <% if (user?.profile.avatar) { %>
+  <h1>Benvenuti allo Studio Cervino, <%= user ? user.profile.name : "guest" %></h1><% if (user?.profile.avatar) { %>
     <div>
       <img 
         src="<%= user.profile.avatar %>" 
@@ -12,7 +11,11 @@
       >
     </div>
     <% } %>
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, pariatur sit? Debitis incidunt, dolorem exercitationem suscipit autem voluptas. Voluptatem ex veritatis iste voluptates excepturi ullam maxime amet corrupti, impedit iure.</h3>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    
+    Alias, pariatur sit? Debitis incidunt, dolorem exercitationem suscipit autem voluptas. 
+    
+    Voluptatem ex veritatis iste voluptates excepturi ullam maxime amet corrupti, impedit iure.</h3>
     <!-- <div id="content">
       <input type="file" id="thefile" accept="audio/*" />
       <canvas id="canvas"></canvas>
