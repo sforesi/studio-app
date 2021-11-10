@@ -7,13 +7,13 @@
       <% instruments.forEach(instrument => { %>
         <li>
           <a href="/instruments/<%= instrument._id %>"><%= instrument.name %></a>
-          is <%= instrument.reserved ? "reserved" : "not reserved" %>
+          <%= instrument.reserved ? "⛔️" : "✅" %>
         </li>
       <% }) %> 
     </ul>
   </section>
   <section>
-    <a href="/instruments/new"><i class="fas fa-drum"></i> ADD INSTRUMENT </a>
+    <a href="/instruments/new"><i class="fas fa-drum"></i><i class="fas fa-plus-circle"></i></a>
   </section>
 </main>
 
