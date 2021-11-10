@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mohave:wght@700&family=Titillium+Web:wght@200&family=Zen+Dots&display=swap');
+@media only screen and (min-width: 600px) {
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Permanent+Marker&family=Titillium+Web:ital,wght@1,200&family=Zen+Dots&display=swap');
+
 
 html {
   box-sizing: border-box
@@ -58,6 +60,7 @@ h2 {
 
 h3 {
   font-size: 2.4rem;
+  font-family: 'Amatic SC', cursive;
 }
 
 ul {
@@ -117,4 +120,141 @@ td {
   font-family: 'Titillium Web', sans-serif;
   font-style: normal;
   font-weight: 100;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Permanent+Marker&family=Titillium+Web:ital,wght@1,200&family=Zen+Dots&display=swap');
+
+
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+     in most browser configurations this will be 10px */
+:root {
+    font-size: 62.5%
+}
+
+body {
+  background-color: #8d5a97;
+  /* Use a system font, if none are available use an available sans-sarif font */
+  font-family: system-ui, -apple-system, "Exo", "Segoe UI",
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: #907f9f;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: aliceblue;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: 'Zen Dots', cursive;  
+  font-style: normal;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 3rem;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-family: 'Amatic SC', cursive;
+}
+
+ul {
+  list-style-type: none;
+}
+
+p, label, li, button, input {
+  font-size: 1.8rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+section {
+  padding: 50px;
+}
+
+a {
+  color: #a4a5ae;
+  font-size: 2rem;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+}
+
+nav > a {
+  margin: 1rem 3rem;
+  text-decoration: none;
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  margin: 1.6rem 0;
+}
+
+.link {
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.profile-avatar {
+  margin-top: 50px;
+}
+
+i {
+  font-size: 2rem;
+  color: aliceblue;
+}
+
+td {
+  font-size: 2rem;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+}
+
 }
