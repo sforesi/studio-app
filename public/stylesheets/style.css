@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mohave:wght@700&family=Titillium+Web:wght@200&family=Zen+Dots&display=swap');
 
 html {
   box-sizing: border-box
@@ -44,7 +44,7 @@ main {
 
 h1 {
   font-size: 3.6rem;
-  font-family: fairweather, sans-serif;
+  font-family: 'Zen Dots', cursive;  
   font-style: normal;
   font-weight: 100;
 }
