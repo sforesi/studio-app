@@ -27,10 +27,15 @@ body {
   font-family: system-ui, -apple-system, "Exo", "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
+  background-image: url(https://images.pexels.com/photos/3398706/pexels-photo-3398706.jpeg?cs=srgb&dl=pexels-ferbugs-3398706.jpg&fm=jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 nav {
-  background-color: #907f9f;
+  background-color: #9f7f8a;
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
@@ -41,7 +46,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: aliceblue;
+  color:black
 }
 
 h1 {
