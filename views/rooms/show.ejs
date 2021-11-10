@@ -7,7 +7,7 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Price</th>
+        <th>💶 (x hour)</th>
         <th>Reserved</th>
         <th>Smoking</th>
         <th>Instruments</th>
@@ -19,16 +19,19 @@
           <td><%= room.price %>$</td>
           <td><%= room.reserved %></td>
           <td><%= room.smoking %></td>
-          <td>
-              <select name="instrument">
-                <% unreservedInstruments.forEach(function   (instrument){  %>    
-                    <option value="<%=instrument.name%>"> <%=instrument.name%> 
-                    </option>  
-                <% }) %> 
-              </select>
-          </td>
+          <td><%= room.instruments %> </td>
+          <form action="/instruments" method="POST">
+            <select name="instrument" multiple>
+              <% unreservedInstruments.forEach(function (instrument){  %>    
+                  <option value="<%=instrument.name%>"> <%=instrument.name%> 
+                  </option>  
+              <% }) %> 
+            </select>
+            <button type="submit"><i class="fas fa-plus-circle"></i></button>
+          </form>
         </tr>  
       </tbody>
+    </table>
       <% if (user) {%>
         <form 
           action="/rooms/<%= room._id %>/switch-reserved?_method=PATCH"
@@ -39,14 +42,13 @@
           </button>
         </form>
         <form action="/rooms/<%= room._id %>/edit" method="GET">
-          <button class="btn" type="submit">EDIT ROOM</button>
+          <button class="btn" type="submit"><i class="far fa-edit"></i></button>
         </form>
         <form action="/rooms/<%= room._id %>?_method=DELETE" method="POST">
-          <button class="btn" type="submit">DELETE ROOM</button>
+          <button class="btn" type="submit"><i class="far fa-trash-alt"></i></button>
         </form>
       </table>
-    
-      <% } %>
-</main>
-
+    <% } %>
+      
+  </main>
 <%- include('../partials/footer') %>
