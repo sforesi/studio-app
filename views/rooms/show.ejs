@@ -7,7 +7,7 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>💶 (x hour)</th>
+        <th>Price</th>
         <th>Reserved</th>
         <th>Smoking</th>
         <th>Instruments</th>
@@ -20,25 +20,14 @@
           <td><%= room.reserved %></td>
           <td><%= room.smoking %></td>
           <td><%= room.instruments %> </td>
-          <form action="/instruments" method="POST">
-            <select name="instrument" >
-              <% unreservedInstruments.forEach(function (instrument){  %>    
-                  <option value="<%=instrument.name%>"> <%=instrument.name%> 
-                  </option>  
-              <% }) %> 
-            </select>
-            <button type="submit"><i class="fas fa-plus-circle"></i></button>
-          </form>
-        </tr>  
-      </tbody>
-    </table>
-      <% if (user) {%>
-        <form 
+        </table>
+        <% if (user) {%>
+          <form 
           action="/rooms/<%= room._id %>/switch-reserved?_method=PATCH"
           method="POST"  
-        >
+          >
           <button class="btn" type="submit">
-            Make room <%= room.reserved ? "not reserved" : "reserved" %> 
+            Room Availability <%= room.reserved ? " ✅" : "⛔️" %> 
           </button>
         </form>
         <form action="/rooms/<%= room._id %>/edit" method="GET">
@@ -48,7 +37,18 @@
           <button class="btn" type="submit"><i class="far fa-trash-alt"></i></button>
         </form>
       </table>
-    <% } %>
+      <form action="/instruments" method="POST">
+        <select name="instrument" >
+          <% unreservedInstruments.forEach(function (instrument){  %>    
+              <option value="<%=instrument.name%>"> <%=instrument.name%> 
+              </option>  
+          <% }) %> 
+        </select>
+        <button type="submit"><i class="fas fa-plus-circle"></i></button>
+      </form>
+    </tr>  
+  </tbody>
+      <% } %>
       
   </main>
 <%- include('../partials/footer') %>

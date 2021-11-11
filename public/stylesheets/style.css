@@ -27,7 +27,7 @@ body {
   font-family: system-ui, -apple-system, "Exo", "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
-  background-image: url(https://images.pexels.com/photos/6966/abstract-music-rock-bw.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-image: url(https://images.pexels.com/photos/352505/pexels-photo-352505.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,7 +35,7 @@ body {
 }
 
 nav {
-  background-color: #fcf7f9;
+  background-color: #8c8c8c;
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
@@ -46,7 +46,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color:black;
+  color:antiquewhite;
   font-family: 'Zen Tokyo Zoo', 'Courier New', Courier, monospace;  
 
 }
@@ -117,7 +117,7 @@ nav > a {
 
 i {
   font-size: 5rem;
-  color: rgb(214, 186, 208);
+  color: rgb(72, 72, 72);
 }
 
 td {
