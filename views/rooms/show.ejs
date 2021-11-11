@@ -21,7 +21,7 @@
           <td><%= room.smoking %></td>
           <td><%= room.instruments %> </td>
           <form action="/instruments" method="POST">
-            <select name="instrument" multiple>
+            <select name="instrument" >
               <% unreservedInstruments.forEach(function (instrument){  %>    
                   <option value="<%=instrument.name%>"> <%=instrument.name%> 
                   </option>  

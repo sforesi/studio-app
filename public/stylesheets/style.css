@@ -35,7 +35,7 @@ body {
 }
 
 nav {
-  background-color: #9f7f8a;
+  background-color: #fcf7f9;
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
@@ -117,7 +117,7 @@ nav > a {
 
 i {
   font-size: 5rem;
-  color: aliceblue;
+  color: rgb(214, 186, 208);
 }
 
 td {
