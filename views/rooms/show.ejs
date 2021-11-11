@@ -2,53 +2,72 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>ROOM DETAILS</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Reserved</th>
-        <th>Smoking</th>
-        <th>Instruments</th>
-      </tr>
-    </thead>
-    <tbody>
+  <section class="header-container">
+    <div class="header-left">
+      <h1>ROOM DETAILS</h1> 
+      <table>
+      <thead>  
         <tr>
-          <td><%= room.name %></td>
-          <td><%= room.price %>$</td>
-          <td><%= room.reserved %></td>
-          <td><%= room.smoking %></td>
-          <td><%= room.instruments %> </td>
-        </table>
-        <% if (user) {%>
-          <form 
-          action="/rooms/<%= room._id %>/switch-reserved?_method=PATCH"
-          method="POST"  
-          >
-          <button class="btn" type="submit">
-            Room Availability <%= room.reserved ? " ✅" : "⛔️" %> 
-          </button>
-        </form>
-        <form action="/rooms/<%= room._id %>/edit" method="GET">
-          <button class="btn" type="submit"><i class="far fa-edit"></i></button>
-        </form>
-        <form action="/rooms/<%= room._id %>?_method=DELETE" method="POST">
-          <button class="btn" type="submit"><i class="far fa-trash-alt"></i></button>
-        </form>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Reserved</th>
+          <th>Smoking</th>
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+        <td><%= room.name %></td>
+        <td><%= room.price %>$</td>
+        <td><%= room.reserved %></td>
+        <td><%= room.smoking %></td>
+      </tr>
       </table>
-      <form action="/instruments" method="POST">
-        <select name="instrument" >
+        <%# if (user) {%>
+      </tbody>
+    </table>
+    </div>
+    <div class="header-right">
+      <form 
+      action="/rooms/<%= room._id %>/switch-reserved?_method=PATCH"
+      method="POST"  
+      >
+      <button class="btn" type="submit">
+        Room Availability <%= room.reserved ? " ✅" : "⛔️" %> 
+      </button>
+    </form>
+    <div class="ui-buttons">
+      <form action="/rooms/<%= room._id %>/edit" method="GET">
+        <button class="btn" type="submit"><i class="far fa-edit"></i></button>
+      </form>
+      <form action="/rooms/<%= room._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit"><i class="far fa-trash-alt"></i></button>
+      </form>
+    </div>
+    </div>
+  </section>
+  <section class="footer-container">
+    <div class="footer-left">
+      <form action="/rooms/<%= room._id %>/instruments" method="POST">
+        <select name="instrumentId" >
           <% unreservedInstruments.forEach(function (instrument){  %>    
-              <option value="<%=instrument.name%>"> <%=instrument.name%> 
+              <option value="<%=instrument._id%>"> <%=instrument.name%> 
               </option>  
           <% }) %> 
         </select>
         <button type="submit"><i class="fas fa-plus-circle"></i></button>
-      </form>
-    </tr>  
-  </tbody>
-      <% } %>
-      
-  </main>
+      </form> 
+    </div>
+    <div class="footer-right">
+      <ul>
+        <% room.instruments.forEach(function (instrument){  %>
+          <li>
+            <%= instrument.name %> 
+          </li>    
+        <% }) %> 
+      </ul>     
+    </div>
+  </section>
+
+</main>
 <%- include('../partials/footer') %>

@@ -50,6 +50,7 @@ function show (req, res) {
   .populate("instruments")
 
   .then(room => {
+    console.log("ROOM", room)
     Instrument.find({_id: {$nin: room.instruments}})
     .then(unreservedInstruments => {
       console.log('SEE ME', unreservedInstruments)
@@ -138,6 +139,19 @@ function deleteRoom(req, res) {
   })
 }
 
+function addInstrument(req, res) {
+  console.log('SEE ME', req.body)
+  Room.findById(req.params.id)
+  .then(room => {
+    room.instruments.push(req.body.instrumentId)
+    room.save()
+    .then(() => {
+      res.redirect(`/rooms/${room._id}`)
+    }) 
+  })
+  
+}
+
 
 
 export {
@@ -149,4 +163,5 @@ export {
   edit,
   update,
   deleteRoom as delete,
+  addInstrument,
 }

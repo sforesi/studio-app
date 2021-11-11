@@ -13,11 +13,13 @@ router.get("/", roomsCtrl.index)
 router.get("/:id", roomsCtrl.show)
 // localhost:3000/rooms/:id/edit
 router.get("/:id/edit", roomsCtrl.edit)
+// localhost:3000/rooms/instruments/:id
+
 
 // localhost:3000/rooms
 router.post("/", roomsCtrl.create)
-
-
+// localhost:3000/rooms/:id/instruments
+router.post("/:id/instruments", roomsCtrl.addInstrument)
 // localhost:3000/room/:id/switch-reserved - PATCH
 router.patch("/:id/switch-reserved", isLoggedIn, roomsCtrl.switchReserved)
 

@@ -14,7 +14,7 @@
       method="POST"  
     >
       <button class="btn" type="submit">
-        Make instrument <%= instrument.reserved ? "not reserved" : "reserved" %> 
+        Instrument Availability <%= instrument.reserved ? " ✅" : "⛔️" %> 
       </button>
     </form>
   <% } %>
