@@ -1,5 +1,5 @@
 @media only screen and (min-width: 600px) {
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Permanent+Marker&family=Titillium+Web:ital,wght@1,200&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Kurenaido&family=Zen+Tokyo+Zoo&display=swap');
 
 
 html {
@@ -27,7 +27,7 @@ body {
   font-family: system-ui, -apple-system, "Exo", "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
-  background-image: url(https://images.pexels.com/photos/3398706/pexels-photo-3398706.jpeg?cs=srgb&dl=pexels-ferbugs-3398706.jpg&fm=jpg);
+  background-image: url(https://images.pexels.com/photos/6966/abstract-music-rock-bw.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -46,26 +46,27 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color:black
+  color:black;
+  font-family: 'Zen Tokyo Zoo', 'Courier New', Courier, monospace;  
+
 }
 
 h1 {
   font-size: 3.6rem;
-  font-family: 'Zen Dots', cursive;  
   font-style: normal;
   font-weight: 100;
 }
 
 h2 {
   font-size: 3rem;
-  font-family: 'Titillium Web', sans-serif;
   font-style: normal;
   font-weight: 100;
 }
 
 h3 {
   font-size: 2.4rem;
-  font-family: 'Amatic SC', cursive;
+  font-style: normal;
+  font-weight: 100;
 }
 
 ul {
@@ -85,9 +86,8 @@ section {
 }
 
 a {
-  color: #a4a5ae;
+  color: #3d4160;
   font-size: 2rem;
-  font-family: 'Titillium Web', sans-serif;
   font-style: normal;
   font-weight: 100;
 }
