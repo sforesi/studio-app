@@ -3,18 +3,19 @@
 
 ## **Getting Started**
 
-[Deployed Link]()
+[Deployed Link](https://recording-studio-app.herokuapp.com/)
 
 
 ### **Background** 
 
-This app is a choose your-own adventure that runs on Browser. 
+This is a recording studio app. 
 
 ### **Application Description & Overview** 
 
+Music is an integral part of the way my family and I relate to one another. It's one of the strongest familial bonds that we have. Nearly everyone is a musician in my family and I've long been wanting to collaborate with one of my family member is a more professional capacity. 
 
+My cousin is opening up a recording studio in Turin, Italy. As such I felt this was the perfect oppportunity to build something together. As of yet the app is very simple. With the functionality in large party being limited to adding rooms and equipment to the studio and assigning that equipment to specific rooms.
 
-### **Functionality** 
 
 
 
@@ -29,7 +30,7 @@ This app is a choose your-own adventure that runs on Browser.
 
 ### **Ice-Box Goals & Improvements to Come** 
 
-
+The site won't have to be fully launched/ operational until March of 2022. In that time I plan to build out significantly more UI and functionality elements to the app. Namely, a more fully fleshed out authorization system, assigning integer based roles to different users. Beyond that I'd also like to take advantage of the fact that my cousin has access to 3-D mapping technology. I'd love to use three.js to build out a virtual tour of each room space as well as piece of equipment. 
 
 ### **Wirefaming**
 
@@ -51,20 +52,7 @@ This app is a choose your-own adventure that runs on Browser.
 
 ### **Credits & Sources** 
 
-#### Corridor Outline
-
-[Jackie](https://codepen.io/jackiezen/details/JjJxGOY)
-
 #### Images 
 
-  [Tom Hall](https://media3.giphy.com/media/26tnaNlcZHVwfsQTe/giphy.gif?cid=790b7611655928d137c77e4961b901c4b4e8d7d19cdad8ff&rid=giphy.gif&ct=g)
-  [Robert Ek](https://media.giphy.com/media/lKKXOCVviOAXS/giphy-downsized-large.gif)
-  [Pi Slices](https://media4.giphy.com/media/1AiqjMPNltYFVyFF2z/giphy.gif?cid=790b761175e804ef1f35d71b5bd2e35aa0733a76f459354b&rid=giphy.gif&ct=g)
-  [Teun Van Der Zalm](https://media0.giphy.com/media/3og0IV7MOCfnm85iRa/giphy.gif?cid=790b7611eabe3308d23f076b6d11d4e0d5c1972672b25b2e&rid=giphy.gif&ct=g)
-  [Chris](https://media4.giphy.com/media/H1B8ZtMvhpy6QjpOnN/giphy.gif?cid=790b76112743c6d301390f9e0157fa3cf3429240d52f8fa0&rid=giphy.gif&ct=g)
-
-
-#### Music 
-
-
-
+  [pexel](https://images.pexels.com/photos/352505/pexels-photo-352505.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)
+  
