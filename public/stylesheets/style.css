@@ -27,7 +27,7 @@ body {
   font-family: system-ui, -apple-system, "Exo", "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
-  background-image: url(https://images.pexels.com/photos/352505/pexels-photo-352505.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+  /* background-image: url(https://images.pexels.com/photos/352505/pexels-photo-352505.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260); */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -117,7 +117,7 @@ nav > a {
 
 i {
   font-size: 5rem;
-  color: rgb(72, 72, 72);
+  color: rgb(197, 195, 195);
 }
 
 td {
