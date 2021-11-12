@@ -1,16 +1,14 @@
 <%- include("../partials/html-head") %>
 <%- include("../partials/nav") %>
 <main>
-  <section>
-  <div>
+<section class="header-container">
+  <div class="header-left">
     <p>Staff member: <%= instrument.owner.name %></p>
   <h1><%= instrument.name %> </h1>
-  <h2>This instrument is <%= instrument.reserved ? "reserved" : "not reserved" %>  </h2>
+
   <h1><%= instrument.price %> $ </h1>
   </div>  
-</section><br>
-<section>
-  <div>  
+  <div class="header-right">  
     <% if (user) {%>
       <form 
         action="/instruments/<%= instrument._id %>/switch-reserved?_method=PATCH"
@@ -20,19 +18,20 @@
           Instrument Availability <%= instrument.reserved ? " ✅" : "⛔️" %> 
         </button>
       </form>
-    <% } %>
+    <% } else { %>
+      <h2>This instrument is <%= instrument.reserved ? "reserved" : "not reserved" %>  </h2>
+      <% } %>
+      <% if (instrument.owner.equals(user?.profile._id)) { %>
+        <form action="/instruments/<%= instrument._id %>/edit" method="GET">
+          <button class="btn" type="submit"><i class="far fa-edit"></i></button>
+        </form>
+        <form action="/instruments/<%= instrument._id %>?_method=DELETE" method="POST">
+          <button class="btn" type="submit"><i class="far fa-trash-alt"></i></button>
+        </form>
+        <% } %>
   </div>
-  <div>
-    <% if (instrument.owner.equals(user?.profile._id)) { %>
-    <form action="/instruments/<%= instrument._id %>/edit" method="GET">
-      <button class="btn" type="submit"><i class="far fa-edit"></i></button>
-    </form>
-    <form action="/instruments/<%= instrument._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit"><i class="far fa-trash-alt"></i></button>
-    </form>
-    <% } %>
-    </div> 
-  </section>
+</section><br>
+
 </main>
 
 <%- include("../partials/footer") %> 
