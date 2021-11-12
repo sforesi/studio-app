@@ -146,6 +146,10 @@ td {
   display: flex;
 }
 
+.staff-label {
+  color: black;
+}
+
 }
 
 
