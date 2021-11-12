@@ -12,9 +12,9 @@ This is a recording studio app.
 
 ### **Application Description & Overview** 
 
-Music is an integral part of the way my family and I relate to one another. It's one of the strongest familial bonds that we have. Nearly everyone is a musician in my family and I've long been wanting to collaborate with one of my family member is a more professional capacity. 
+Music is an integral part of the way my family and I relate to one another. It's one of the strongest familial bonds that we have. Nearly everyone is a musician in my family and I've long been wanting to collaborate with one of my family members in a more professional capacity. 
 
-My cousin is opening up a recording studio in Turin, Italy. As such I felt this was the perfect oppportunity to build something together. As of yet the app is very simple. With the functionality in large party being limited to adding rooms and equipment to the studio and assigning that equipment to specific rooms.
+My cousin is opening up a recording studio in Turin, Italy. As such I felt this was the perfect oppportunity to build something together. As of yet the app is very simple. With the functionality in large party being limited to adding rooms and equipment to the studio, and assigning that equipment to specific rooms.
 
 
 

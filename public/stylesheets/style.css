@@ -130,7 +130,6 @@ td {
 .header-container {
   display: flex;
   width: 100vw;
-  border: 1px solid red;
 }
 
 .header-right {
@@ -192,10 +191,10 @@ td {
           Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     margin: 0;
     background-image: url(https://images.pexels.com/photos/352505/pexels-photo-352505.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
-    /* -webkit-background-size: cover;
+    -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover; */
-    /* background-size: cover; */
+    -o-background-size: cover; 
+    background-size: cover;
   }
   
   nav {
@@ -292,6 +291,28 @@ td {
   }
 
 
+  .header-container {
+    display: flex;
+    width: 100vw;
+  }
+  
+  .header-right {
+    width: 50%;
+  }
+  
+  .header-left { 
+    width: 50%;
+  }
+  
+  .ui-buttons {
+    width: 100%;
+    display: flex;
+  }
+  
+  .staff-label {
+    color: black;
+  }
+  
 
 
 }
